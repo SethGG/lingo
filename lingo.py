@@ -9,11 +9,11 @@ def create_word_row(word, answer, correct):
 
     x = 0
     memory = set()
-    while x < 10:
+    while x < len(answer):
         canvas.create_rectangle(x*100, 0, x*100+100, 100, fill="#3991d1")
-        if (x >= len(word) and x < len(answer) and answer[x] == " ") or (x < len(word) and word[x] == " "):
+        if (x >= len(word) and answer[x] == " ") or (x < len(word) and word[x] == " "):
             canvas.create_rectangle(x*100, 0, x*100+100, 100, fill="grey")
-        elif (x < len(answer) and x < len(word) and answer[x] == word[x]) or (x >= len(word) and x in correct):
+        elif (x < len(word) and answer[x] == word[x]) or (x >= len(word) and x in correct):
             canvas.create_rectangle(x*100, 0, x*100+100, 100, fill="#e41c40")
             correct.add(x)
         elif x < len(word):
