@@ -43,7 +43,7 @@ while True:
     row.forget()
     row, correct = create_word_row(guess, answer, correct)
     row.pack()
-    if len(correct) == len(answer):
+    if len(correct) == len(answer) - answer.count(" "):
         break
     row, correct = create_word_row("", answer, correct)
     row.pack()
